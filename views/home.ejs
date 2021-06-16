@@ -9,6 +9,8 @@ for(var i=0;i<posts.length;i++){
  %> 
 <%   posts.forEach(function(post){%>
     <h2><%= post.title%></h2>
-    <p><%= post.body%></p>
+    <p><%= post.body.split(" ").splice(0,50).join(" ")+'...'%>
+        <a href="/post/<%= post.title%>">Read More</a>
+    </p>
     <%   })%>
 <%-include("./partials/footer");-%>
